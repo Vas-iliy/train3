@@ -12,16 +12,9 @@ if ($_POST['login']) {
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $password;
             header("Location:admin.php");
-        } else {
-            array_push($arr, 0);
         }
     }
-
-    $arr1 = array_fill(0, count($arr), 0);
-    $result = array_diff($arr, $arr1);
-    if (!$result) {
-        echo "<h2>Неверный логин или пароль</h2>";
-    }
+    echo 'Неверный логин или пароль';
 }
 
 ?>
